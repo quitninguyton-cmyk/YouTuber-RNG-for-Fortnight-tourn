@@ -1,1 +1,120 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Creator HQ | Kill Counter</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🎮 CREATOR HQ</div>
+
+    <button onclick="goDiscord()" class="discord">
+      💬 Join Discord
+    </button>
+  </header>
+
+  <main>
+
+    <section class="hero">
+
+      <p class="eyebrow">CREATOR HQ GAMING</p>
+
+      <h1>🔥 Kill Counter</h1>
+
+      <p class="subtitle">
+        Generate a random kill count and see how high you can go!
+      </p>
+
+    </section>
+
+    <section class="game">
+
+      <div class="counter">
+
+        <p class="label">CURRENT KILLS</p>
+
+        <div id="kills" class="kills">
+          0
+        </div>
+
+        <p id="message" class="message">
+          Ready?
+        </p>
+
+        <button
+          id="killButton"
+          onclick="generateKills()"
+          class="kill-button"
+        >
+          🎯 GENERATE KILLS
+        </button>
+
+      </div>
+
+      <div class="stats">
+
+        <div class="stat">
+          <span id="totalRolls">0</span>
+          <small>ROLLS</small>
+        </div>
+
+        <div class="stat">
+          <span id="highestKills">0</span>
+          <small>BEST KILLS</small>
+        </div>
+
+        <div class="stat">
+          <span id="averageKills">0</span>
+          <small>AVERAGE</small>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="leaderboard">
+
+      <p class="eyebrow">YOUR RECORDS</p>
+
+      <h2>🏆 Kill Records</h2>
+
+      <div id="records">
+
+        <div class="empty">
+          Generate your first kill count!
+        </div>
+
+      </div>
+
+      <button
+        onclick="resetGame()"
+        class="reset"
+      >
+        Reset Records
+      </button>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <p>🎮 Creator HQ Kill Counter</p>
+
+    <small>
+      Fan-made gaming tool
+    </small>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
