@@ -574,3 +574,12 @@ musicButton.addEventListener("click", () => {
         musicStatus.textContent = "Space Music: OFF";
     }
 });
+const music = document.getElementById("backgroundMusic");
+
+document.getElementById("musicButton").addEventListener("click", () => {
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+});
