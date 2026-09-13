@@ -3,7 +3,7 @@
 // ==========================================
 
 // Change this to your real Discord invite.
-const DISCORD_LINK = "https://discord.gg/4DZjEmSUy";
+const DISCORD_LINK = "https://discord.gg/4f5aNDdxw";
 
 // ==========================================
 // YOUTUBER LIST
