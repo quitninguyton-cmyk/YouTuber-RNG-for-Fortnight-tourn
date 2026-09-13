@@ -543,3 +543,34 @@ popup.addEventListener(
 updateStats();
 
 renderCollection();
+// ================================
+// BACKGROUND SPACE MUSIC
+// ================================
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
+
+let musicPlaying = false;
+
+musicButton.addEventListener("click", () => {
+
+    if (!musicPlaying) {
+
+        music.play();
+
+        musicPlaying = true;
+
+        musicButton.textContent = "⏸ PAUSE MUSIC";
+        musicStatus.textContent = "Space Music: ON";
+
+    } else {
+
+        music.pause();
+
+        musicPlaying = false;
+
+        musicButton.textContent = "▶ PLAY MUSIC";
+        musicStatus.textContent = "Space Music: OFF";
+    }
+});
