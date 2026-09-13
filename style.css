@@ -117,3 +117,68 @@
 
 </body>
 </html>
+/* ================================
+   SPACE MUSIC PLAYER
+================================ */
+
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    background: rgba(5, 0, 35, 0.85);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 20px rgba(123, 44, 255, 0.4),
+        0 0 40px rgba(0, 198, 255, 0.15);
+
+    z-index: 9999;
+}
+
+.music-info {
+    color: #dce1ff;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+#musicButton {
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    color: white;
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #ff00cc,
+        #7b2cff,
+        #00c6ff
+    );
+
+    border: none;
+
+    cursor: pointer;
+}
+
+#musicButton:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(0, 198, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+    .music-player {
+        right: 10px;
+        bottom: 10px;
+    }
+}
