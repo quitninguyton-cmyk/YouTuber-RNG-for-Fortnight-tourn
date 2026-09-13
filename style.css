@@ -1,454 +1,119 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(circle at top, #25204d 0%, #100f20 45%, #080810 100%);
-  color: white;
-  min-height: 100vh;
-}
-
-.navbar {
-  width: 100%;
-  padding: 20px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  background: rgba(8,8,16,0.75);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-
-.logo {
-  font-weight: 900;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-
-.discord-btn,
-.roll-button,
-.clear-button,
-.popup button {
-  border: none;
-  cursor: pointer;
-  color: white;
-  font-weight: 800;
-  transition: 0.2s ease;
-}
-
-.discord-btn {
-  padding: 11px 18px;
-  border-radius: 10px;
-  background: #5865f2;
-}
-
-.discord-btn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.15);
-}
-
-main {
-  width: min(1100px, 92%);
-  margin: auto;
-}
-
-.hero {
-  text-align: center;
-  padding: 70px 20px 35px;
-}
-
-.small-title {
-  color: #9d8cff;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  margin-bottom: 8px;
-}
-
-.hero h1 {
-  font-size: clamp(42px, 8vw, 78px);
-  font-weight: 1000;
-  letter-spacing: -3px;
-}
-
-.subtitle {
-  margin-top: 15px;
-  color: #b7b5c7;
-  font-size: 18px;
-}
-
-.game-card {
-  background: rgba(22,21,39,0.9);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 28px;
-  padding: 35px;
-  box-shadow: 0 25px 80px rgba(0,0,0,0.35);
-}
-
-.result-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 30px;
-}
-
-.result-icon {
-  width: 75px;
-  height: 75px;
-  border-radius: 20px;
-  display: grid;
-  place-items: center;
-  font-size: 35px;
-  background: linear-gradient(135deg, #684cff, #9d4edd);
-  box-shadow: 0 0 30px rgba(123,76,255,0.35);
-}
-
-.result-label {
-  color: #8e8b9f;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
-.result-info h2 {
-  font-size: 28px;
-  margin: 3px 0 7px;
-}
-
-.rarity {
-  padding: 5px 10px;
-  border-radius: 8px;
-  background: #2c2b3e;
-  color: #bdb9ce;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.roll-area {
-  text-align: center;
-}
-
-.ring {
-  width: 245px;
-  height: 245px;
-  margin: 10px auto 25px;
-  border-radius: 50%;
-  padding: 9px;
-  background: conic-gradient(
-    #ff4d6d,
-    #ffd166,
-    #06d6a0,
-    #4cc9f0,
-    #7b2cff,
-    #ff4d6d
-  );
-  animation: spinRing 5s linear infinite;
-  box-shadow:
-    0 0 30px rgba(123,76,255,0.3),
-    0 0 80px rgba(123,76,255,0.15);
-}
-
-.ring-inner {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #11101e;
-  display: grid;
-  place-items: center;
-  border: 6px solid #19182b;
-}
-
-.ring-inner span {
-  font-size: 70px;
-}
-
-@keyframes spinRing {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.roll-button {
-  padding: 17px 55px;
-  border-radius: 14px;
-  font-size: 21px;
-  background: linear-gradient(135deg, #7048ff, #b146ff);
-  box-shadow: 0 10px 30px rgba(112,72,255,0.3);
-}
-
-.roll-button:hover {
-  transform: scale(1.04);
-  box-shadow: 0 15px 40px rgba(112,72,255,0.45);
-}
-
-.roll-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-#rollMessage {
-  margin-top: 13px;
-  color: #aaa7bb;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 35px;
-}
-
-.stat {
-  background: #19182a;
-  border: 1px solid rgba(255,255,255,0.07);
-  padding: 18px;
-  border-radius: 14px;
-  text-align: center;
-}
-
-.stat span {
-  display: block;
-  font-size: 25px;
-  font-weight: 900;
-}
-
-.stat small {
-  display: block;
-  margin-top: 5px;
-  color: #858194;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-
-.collection-section,
-.rarities-section {
-  padding: 65px 0 10px;
-}
-
-.section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.section-heading h2,
-.rarities-section h2 {
-  font-size: 34px;
-}
-
-.clear-button {
-  background: #252438;
-  padding: 10px 15px;
-  border-radius: 9px;
-  font-size: 12px;
-}
-
-.clear-button:hover {
-  background: #3a374f;
-}
-
-.collection {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 15px;
-}
-
-.empty-collection {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 50px;
-  border: 1px dashed #454158;
-  border-radius: 16px;
-  color: #858194;
-}
-
-.creator-card {
-  padding: 20px;
-  background: #171625;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 17px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.creator-icon {
-  width: 65px;
-  height: 65px;
-  margin: auto;
-  display: grid;
-  place-items: center;
-  font-size: 30px;
-  border-radius: 17px;
-  background: linear-gradient(135deg, #383451, #211f32);
-}
-
-.creator-card h3 {
-  margin-top: 12px;
-  font-size: 17px;
-}
-
-.creator-card p {
-  color: #9995aa;
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-.rarity-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.rarity-card {
-  padding: 20px 10px;
-  background: #171625;
-  border-radius: 15px;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.rarity-card span {
-  font-size: 27px;
-}
-
-.rarity-card h3 {
-  margin-top: 8px;
-}
-
-.rarity-card p {
-  margin-top: 5px;
-  color: #9692a6;
-  font-size: 12px;
-}
-
-footer {
-  text-align: center;
-  padding: 60px 20px 35px;
-  color: #777386;
-}
-
-.footer-small {
-  margin-top: 7px;
-  font-size: 11px;
-}
-
-.popup {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  display: none;
-  place-items: center;
-  z-index: 100;
-  backdrop-filter: blur(7px);
-}
-
-.popup.show {
-  display: grid;
-}
-
-.popup-content {
-  width: min(420px, 90%);
-  padding: 40px;
-  background: #19182a;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 25px;
-  text-align: center;
-  animation: popupIn 0.3s ease;
-}
-
-@keyframes popupIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.popup-icon {
-  font-size: 70px;
-}
-
-.popup-content h2 {
-  margin-top: 15px;
-  font-size: 30px;
-}
-
-.popup-content p {
-  margin: 10px 0 25px;
-  color: #a9a5b8;
-  font-weight: 800;
-}
-
-.popup button {
-  padding: 12px 30px;
-  border-radius: 10px;
-  background: #7048ff;
-}
-
-@media (max-width: 700px) {
-
-  .navbar {
-    padding: 15px 4%;
-  }
-
-  .logo {
-    font-size: 15px;
-  }
-
-  .discord-btn {
-    padding: 9px 12px;
-    font-size: 11px;
-  }
-
-  .hero {
-    padding-top: 45px;
-  }
-
-  .game-card {
-    padding: 22px;
-  }
-
-  .ring {
-    width: 190px;
-    height: 190px;
-  }
-
-  .ring-inner span {
-    font-size: 55px;
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .rarity-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .section-heading {
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Creator HQ | Kill Counter</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🎮 CREATOR HQ</div>
+
+    <button onclick="goDiscord()" class="discord">
+      💬 Join Discord
+    </button>
+  </header>
+
+  <main>
+
+    <section class="hero">
+
+      <p class="eyebrow">CREATOR HQ GAMING</p>
+
+      <h1>🔥 Kill Counter</h1>
+
+      <p class="subtitle">
+        Generate a random kill count and see how high you can go!
+      </p>
+
+    </section>
+
+    <section class="game">
+
+      <div class="counter">
+
+        <p class="label">CURRENT KILLS</p>
+
+        <div id="kills" class="kills">
+          0
+        </div>
+
+        <p id="message" class="message">
+          Ready?
+        </p>
+
+        <button
+          id="killButton"
+          onclick="generateKills()"
+          class="kill-button"
+        >
+          🎯 GENERATE KILLS
+        </button>
+
+      </div>
+
+      <div class="stats">
+
+        <div class="stat">
+          <span id="totalRolls">0</span>
+          <small>ROLLS</small>
+        </div>
+
+        <div class="stat">
+          <span id="highestKills">0</span>
+          <small>BEST KILLS</small>
+        </div>
+
+        <div class="stat">
+          <span id="averageKills">0</span>
+          <small>AVERAGE</small>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="leaderboard">
+
+      <p class="eyebrow">YOUR RECORDS</p>
+
+      <h2>🏆 Kill Records</h2>
+
+      <div id="records">
+
+        <div class="empty">
+          Generate your first kill count!
+        </div>
+
+      </div>
+
+      <button
+        onclick="resetGame()"
+        class="reset"
+      >
+        Reset Records
+      </button>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <p>🎮 Creator HQ Kill Counter</p>
+
+    <small>
+      Fan-made gaming tool
+    </small>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
